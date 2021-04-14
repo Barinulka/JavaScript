@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 2</title>
+</head>
+<body>
+    <script>
+        /*
+            2) Чему будут равны переменные x и a в примере ниже?
+               Написать почему так произошло
+               1. a = 4, x = 5
+               2. x = 1 + (a *= 2), скобки имеют приоритет, поэтому сначало выполнится a *= 2
+               3. (a *= 2) - работает как a = a * 2
+               4. a = 4
+               5. x = 5
+        */
+        let a = 2;
+        let x = 1 + (a *= 2);
+        alert(`a = ${a}, x = ${x}`);
+    </script>
+</body>
+</html>
