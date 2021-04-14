@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 4/5</title>
+</head>
+<body>
+    <script>
+        /*
+            4) Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя
+               параметрами. Т.е. например, функция для сложения должна принимать два числа, складывать их
+               и возвращать результат.
+               Обязательно использовать оператор return.
+            5) Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+               где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+               переданного значения операции (использовать switch) выполнить одну из арифметических
+               операций
+               (использовать функции из задания 4) и вернуть полученное значение.
+        */
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function dif(a, b) {
+            return a - b;
+        }
+
+        function mul(a, b) {
+            return a * b;
+        }
+
+        function div(a, b) {
+            if (b == 0) {
+                return 'На ноль делить нельзя!';
+            }
+            return a / b;
+        }
+
+        // console.log(sum(2, 2));
+        // console.log(dif(10, 5));
+        // console.log(div(10, 0));
+
+        function mathOperation(arg1, arg2, operation) {
+            switch(operation) {
+                case '+':
+                    console.log(sum(arg1, arg2));
+                    break;
+                case '-':
+                    console.log(dif(arg1, arg2));
+                    break;
+                case '*':
+                    console.log(mul(arg1, arg2));
+                    break;
+                case '/':
+                    console.log(div(arg1, arg2));
+                    break;
+                default:
+                    console.log('Я не знаю такой математической операции.\r\nВыберите операцию из списка("+", "-", "*", "/").');
+            }
+        }
+
+        let arg1 = +prompt('Введите первое число.');
+        let arg2 = +prompt('Введите второе число.');
+        let operation = prompt('Выберите операцию из списка("+", "-", "*", "/").');
+
+        mathOperation(arg1, arg2, operation);
+    </script>
+</body>
+</html>
