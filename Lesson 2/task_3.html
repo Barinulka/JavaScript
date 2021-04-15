@@ -18,16 +18,24 @@
         let a = +prompt('Введите первое число');
         let b = +prompt('Введите второе число');
 
-        if(a >= 0 && b >= 0) {
-            let dif = a - b;
-            console.log(`Числа положительные, их разность ${dif}`);
-        } else if(a < 0 && b < 0) {
-            let mul = a * b;
-            console.log(`Числа отрицательные, их произведение ${mul}`);
-        } else {
-            let sum = a + b;
-            console.log(`Числа разных знаков, их сумма ${sum}`);
+        function numbers(a, b){
+            if(isNaN(a) || isNaN(b)){
+                return console.log('Введите числа');
+            }
+            
+            if(a >= 0 && b >= 0) {
+                let dif = a - b;
+                return console.log(`Числа положительные, их разность ${dif}`);
+            } else if(a < 0 && b < 0) {
+                let mul = a * b;
+                return console.log(`Числа отрицательные, их произведение ${mul}`);
+            } else {
+                let sum = a + b;
+                return console.log(`Числа разных знаков, их сумма ${sum}`);
+            }
         }
+
+        numbers(a, b);
     </script>
 </body>
 </html>
