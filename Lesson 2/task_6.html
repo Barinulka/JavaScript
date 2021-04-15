@@ -29,19 +29,19 @@
             let rub = null;
 
             console.log(`lastChar = ${lastChar}`);
-            
+
             switch (true) {
                 case lastChar == 1:
                     rub = 'рубль';
-                    console.log(`Ваша сумма в ${str} ${rub} успешно зачислна.`)
+                    console.log(`Ваша сумма в ${str} ${rub} успешно зачислена.`)
                     break;
                 case lastChar >= 2 && lastChar <= 4:
                     rub = 'рубля';
-                    console.log(`Ваша сумма в ${str} ${rub} успешно зачислна.`)
+                    console.log(`Ваша сумма в ${str} ${rub} успешно зачислена.`)
                     break;
                 case lastChar == 0 || lastChar >= 5 && lastChar <= 9:
                     rub = 'рублей';
-                    console.log(`Ваша сумма в ${str} ${rub} успешно зачислна.`)
+                    console.log(`Ваша сумма в ${str} ${rub} успешно зачислена.`)
                     break;
                 default:
                     console.log(`Я не знаю такой суммы`);
