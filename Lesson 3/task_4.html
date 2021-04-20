@@ -44,10 +44,15 @@
 
         let prodFilterPhoto = products.filter(function (element) {
             // Проверяем есть ли массив с фотографиями
-            if(typeof(element.photos) != "undefined" && element.photos !== null) {
-                if(element.photos.length > 0) {
-                    return element;
-                }
+            // if(typeof(element.photos) != "undefined" && element.photos !== null) { // это условие подсмотрел в интернете
+            //     if(element.photos.length > 0) {
+            //         return element;
+            //     }
+            // }
+
+            // Немного поразмыслив, придумал такое решение
+            if(element.photos && element.photos.length > 0) {
+                return element;
             }
         });
 
