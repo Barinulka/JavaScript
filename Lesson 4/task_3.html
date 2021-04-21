@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 3</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        /*
+            1.2)    Сделайте в стиле es5, а затем в стиле es6
+                        а)  конструктор Post, который принимает параметры author, text, date и сохраняет их как свойства объекта. Объекты
+                        типа Post должны иметь метод edit, который будет принимать текст и записывать его в свойство text объекта.
+                        б)  конструктор AttachedPost, который принимает параметры author, text, date. Проинициализируйте эти свойства с
+                        помощью конструктора Post, чтобы не дублировать код. Также в конструкторе AttachedPost должно создаваться
+                        свойство highlighted со значением false. Унаследуйте в объектах типа AttachedPost методы из Post.
+                        Объекты типа AttachedPost должны иметь метод makeTextHighlighted, который будет назначать свойству
+                        highlighted значение true.
+        */
+
+        /*
+        function Post(author, date) {
+            this.author = author;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function(text) {
+            this.text = text;
+        }
+
+
+        let newPost = new Post('Me', '21.04.2021');
+
+        newPost.edit('Некоторый текст, который должен записать метод edit в свойство text');
+        console.log(newPost);
+
+        function AttachedPost(author, date) {
+            Post.call(this, author, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        }
+
+        let newAttachedPost = new AttachedPost('We', '21.04.2021');
+
+        newAttachedPost.edit('Некоторый текст, который должен записать метод edit в свойство text объекта АttachedPost');
+        newAttachedPost.makeTextHighlighted();
+
+        console.log(newAttachedPost);
+        */
+
+        class Post {
+            constructor(author, date) {
+                this.author = author;
+                this.date = date;
+            }
+
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+        class AttachedPost extends Post {
+            constructor(author, date){
+                super(author, date);
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        let obj1 = new Post('Me', '21.04.2021');
+        let obj2 = new AttachedPost('We', '21/04/2021');
+        console.log(obj2);
+
+        obj1.edit('Некоторый текст, который должен записать метод edit в свойство text');
+        obj2.edit('Некоторый текст, который должен записать метод edit в свойство text объекта АttachedPost');
+        obj2.makeTextHighlighted();
+
+        console.log(obj1);
+        console.log(obj2);
+    </script>
+</body>
+</html>
