@@ -41,7 +41,7 @@ let game = {
     },
 
     isAnswer(quest) {
-        if (!isNaN(quest)) {
+        if (!isNaN(quest) || (quest != 'a' && quest != 'b' && quest != 'c' && quest != 'd' && quest != 'e' )) {
            alert('Введите вариант ответа a, b, c или d');
            return false;
        }
