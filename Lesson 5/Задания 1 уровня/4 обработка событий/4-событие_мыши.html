@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea></textarea>
+
+    <!-- Задание. Сделайте, чтобы при наведении на textarea в консоли
+    появлялось сообщение: "вы навели на textarea" -->
+
+    <script>
+        let elem = document.querySelector('textarea');
+
+        let obj = {
+            over() {
+                console.log('вы навели курсор на textarea');
+            },
+
+            out() {
+                console.log('вы убрали курсор с textarea');
+            }
+        }
+
+        elem.onmouseover = obj.over;
+        elem.onmouseout = obj.out;
+    </script>
+</body>
+</html>
