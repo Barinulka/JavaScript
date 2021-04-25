@@ -13,5 +13,22 @@
     2. Затем обратитесь к списку классов и с помощью метода contains()
     проверьте есть ли класс hidden у этого тега.
      -->
+
+    <script>
+        let element = document.querySelector('div');
+
+        
+
+        function isClassName(className) {
+            let clsList = element.classList;
+            
+            if(clsList.contains(className)) {
+                return `У тега <${element.localName}> есть класс ${className}`;
+            }
+            return `Такого класса ${className} нет в теге <${element.localName}>`;
+        }
+
+        console.log(isClassName('hidden'));
+    </script>
 </body>
 </html>
