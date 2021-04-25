@@ -21,5 +21,17 @@
     3. При клике из event.target c помощью getAttribute() получите значение
     каждого атрибута и выведите в консоль.
     -->
+
+    <script>
+        let elem = document.querySelector('.modal');
+
+        function show(event) {
+            for (el of elem.attributes) {
+                console.log(`Значение ${el.name} = ${event.target.getAttribute(el.name)}`);
+            }
+        }
+
+        elem.addEventListener('click', show, false);
+</script>
 </body>
 </html>
