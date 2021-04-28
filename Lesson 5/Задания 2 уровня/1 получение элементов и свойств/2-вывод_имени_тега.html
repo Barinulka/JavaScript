@@ -17,7 +17,12 @@
     -->
 
     <script>
+        let elements = document.getElementsByClassName('one');
 
+        for (element of elements) {
+            console.log(element.nodeName); // Выводит H3, A, P
+            // console.log(element.localName); // Выводит h3, a, p
+        }
     </script>
 </body>
 </html>

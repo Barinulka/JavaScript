@@ -16,5 +16,17 @@
     4. При клике из event.target выведите в консоль: id, имя класса (используйте
     свойство className), текст на кнопке.
     -->
+
+    <script>
+        let btn = document.getElementById('one');
+
+        function isClick(event) {
+            console.log(event.target.id);
+            console.log(event.target.className);
+            console.log(event.target.innerText);
+        }
+
+        btn.addEventListener('click', isClick, false);
+    </script>
 </body>
 </html>

@@ -19,7 +19,19 @@
     -->
 
     <script>
+        let elements = document.getElementsByTagName('b');
         
+        function addClass(className) {
+            for (elem of elements) {
+                let clsList = elem.classList;
+                
+                if(!clsList.contains(className)) {
+                    clsList.add(className);
+                }
+            }
+        }
+
+        addClass('sign');
     </script>
 </body>
 </html>
