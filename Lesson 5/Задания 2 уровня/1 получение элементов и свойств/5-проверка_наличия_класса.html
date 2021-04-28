@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="product hidden"></div>
+
+    <!-- Задание.
+    1. Вам нужно получить этот div.
+    2. Затем обратитесь к списку классов и с помощью метода contains()
+    проверьте есть ли класс hidden у этого тега.
+     -->
+
+    <script>
+        let element = document.querySelector('div');
+
+        
+
+        function isClassName(className) {
+            let clsList = element.classList;
+            
+            if(clsList.contains(className)) {
+                return `У тега <${element.localName}> есть класс ${className}`;
+            }
+            return `Такого класса ${className} нет в теге <${element.localName}>`;
+        }
+
+        console.log(isClassName('hidden'));
+    </script>
+</body>
+</html>
