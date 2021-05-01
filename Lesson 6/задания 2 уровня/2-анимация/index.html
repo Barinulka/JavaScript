@@ -23,7 +23,15 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        let btn = document.querySelector('button');
+        let msg = document.querySelector('.message');
+
+        btn.addEventListener('click', function(){
+            msg.classList.add('animate__animated', 'animate__fadeInLeftBig');
+            msg.style.display = 'block';
+        });
     </script>
 </body>
 </html>
