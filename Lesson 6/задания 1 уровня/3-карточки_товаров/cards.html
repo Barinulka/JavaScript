@@ -44,7 +44,19 @@
     -->
 
     <script>
+        let products = document.querySelectorAll('.product');
+        let productsName = document.querySelectorAll('.productName');
+        console.log(products);
+        console.log(productsName);
 
+
+        products.forEach(function(product){
+            product.style.background = '#aff';   
+        });
+
+        for (let productName of productsName) {
+            productName.style.fontSize = '24px';
+        }
     </script>
 </body>
 </html>

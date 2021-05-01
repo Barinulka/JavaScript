@@ -13,7 +13,24 @@
     2. Измените атрибут src, например с помощью setAttribute -->
 
     <script>
-        
+        'use strict';
+        let imgPathArray = ['images/1.jpg', 'images/2.jpg'];
+        let element = document.querySelector('img');
+        console.log(element);
+
+        element.addEventListener('click', function(){
+            let src = element.getAttribute('src');
+            toggleImage(src);
+        });           
+
+        function toggleImage(src) {
+            for (let path of imgPathArray){
+                if(src != path) {
+                    element.setAttribute('src', path);
+                    console.log(element);
+                }
+            }        
+        }
     </script>
 </body>
 </html>
