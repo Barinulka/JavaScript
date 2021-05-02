@@ -49,9 +49,6 @@
                     if (!elements[i].classList.contains('goldenClass')) {
                         elements[i].classList.add(goldenClass);
                     }
-                    elements[i].addEventListener('mouseout', function(){
-                        elements[i].classList.remove(goldenClass);
-                    });
                 }
                 else if (i > 0) {
                     let arr = [];
@@ -64,6 +61,21 @@
                 } 
                 
             });
+
+            elements[i].addEventListener('mouseout', function(){
+                if (i == 0) {
+                    elements[i].classList.remove(goldenClass);
+                }
+                else if (i > 0) {
+                    let arr = [];
+
+                    for (let a = 0; a <= i; a++) {
+                        arr.push(elements[a]);
+                    }
+
+                    noStar(arr);
+                } 
+            });
         }
 
         function goldStar(arr) {
@@ -71,10 +83,14 @@
                 if(!el.classList.contains('goldenClass')) {
                     el.classList.add(goldenClass);
                 }
+            }
+        }
 
-                el.addEventListener('mouseout', function(){
+        function noStar(arr) {
+            for (let el of arr) {
+                if(!el.classList.contains('goldenClass')) {
                     el.classList.remove(goldenClass);
-                })
+                }
             }
         }
         
