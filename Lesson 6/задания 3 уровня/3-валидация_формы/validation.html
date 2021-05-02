@@ -36,7 +36,24 @@
      -->
 
     <script>
-        
+        'use strict';
+
+        let formEL = document.querySelector('form');
+        let firstInput = document.getElementById('first');
+        let secondInput = document.getElementById('second');
+
+        console.log(firstInput.value)
+
+        formEL.addEventListener('submit', function(event) {
+            if(firstInput.value == '') {
+                firstInput.style.borderColor = 'red';
+                event.preventDefault();
+            } 
+            if (secondInput.value == '') {
+                secondInput.style.borderColor = 'red';
+                event.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>

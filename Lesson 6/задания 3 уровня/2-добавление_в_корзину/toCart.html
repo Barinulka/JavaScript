@@ -41,10 +41,21 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        let elements = document.querySelectorAll('button');
+        console.log(elements);
+
+        elements.forEach(function(element) {
+            element.addEventListener('click', function(event) {
+                buttonClickHandler(event);
+            });
+        });
+
 		
 		function buttonClickHandler(event) {
-		
+            event.target.parentNode.style.background = 'lightgreen';
+            event.target.innerText = 'Добавлено';
 		}
     </script>
 </body>

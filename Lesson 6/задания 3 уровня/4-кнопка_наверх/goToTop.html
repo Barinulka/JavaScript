@@ -27,7 +27,35 @@
     -->
 
     <script>
+        let goToTopEl = document.getElementById('goToTop');
         
+        window.addEventListener('scroll', function(){
+            let pageYOffset = window.pageYOffset;
+            if (pageYOffset > 500) {
+                goToTopEl.style.display = 'block';
+            } else {
+                goToTopEl.style.display = 'none';
+            }
+        });
+
+
+         /*
+            Данное решение подсмотрел в интернете, 
+            тут через рекурсию отматывает наверх по 100px, 
+            а setTimeout для плавности перемотки
+        */
+
+        goToTopEl.addEventListener('click', function(){
+           goBack();
+        });
+
+        function goBack() {
+            if(window.pageYOffset > 0){
+                window.scrollBy(0, -100);
+                setTimeout(goBack, 10)
+            }
+            
+        }
     </script>
 </body>
 </html>
