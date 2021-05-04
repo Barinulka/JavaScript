@@ -8,6 +8,8 @@
 <body>
     
     <script>
+        'use strict';
+
         let totalString = "";
 
         /* Задание.
@@ -15,10 +17,16 @@
         так, чтобы итоговое значение в totalString получилось: слово1слово2слово3
         */
 
+        function innerString(word, count) {
+            for (let i = 1; i <= count; i++) {
+                totalString += word + i;
+            }
+            return totalString;
+        }
 
         // должно вывести:
         // слово1слово2слово3
-        console.log(totalString);
+        console.log(innerString('слово', 3));
     </script>
 </body>
 </html>
