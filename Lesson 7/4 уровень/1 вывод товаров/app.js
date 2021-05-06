@@ -1,5 +1,5 @@
 "use strict";
-/* 
+/*
 Разметка товара:
 
 <div class="product">
@@ -75,6 +75,14 @@ const products = {
     ],
 };
 
+let buttons = document.querySelectorAll('button');
+let prod = document.querySelector('.products');
+
+buttons.forEach(function(btn){
+    btn.addEventListener('click', function(event){
+        clickHandler(event);
+    });
+});
 
 /**
  * Эта функция должна вызываться при клике по кнопкам.
@@ -82,10 +90,11 @@ const products = {
  */
 function clickHandler(event) {
     //вам нужно очищать содержимое .products
-    
+    prod.innerHTML = "";
     //в showCategory надо передать строку с типом категории, тип берите
     //из атрибута data-type у кнопки, по которой кликнули.
-    
+    let category = event.target.getAttribute('data-type');
+    showCategory(category);
 }
 
 /**
@@ -96,7 +105,11 @@ function clickHandler(event) {
  * по которой кликнули.
  */
 function showCategory(category) {
-    
+    console.log(category);
+    products[category].forEach(function(product) {
+        prod.insertAdjacentHTML('beforeend', getProductMarkup(product));
+    });
+
 }
 
 /**
@@ -109,5 +122,11 @@ function showCategory(category) {
  * в верху этого файла.
  */
 function getProductMarkup(product) {
+    let string = `<div class="product">
+        <div>${product.name}</div>
+        <img src="${product.imageUrl}" alt="${product.name}">
+        <div>${product.price}</div>
+        <a href="https://example.com/producs/${product.id}">Подробнее</a></div>`;
 
+    return string
 }
